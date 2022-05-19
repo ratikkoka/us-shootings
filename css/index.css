@@ -31,9 +31,13 @@ li a:hover {
 
 .site-title {
     float: left;
+}
+
+.site-title a {
     color: white;
     font-weight: bold;
     text-align: center;
     display: block;
     padding: 14px 16px;
+    text-decoration: none;
 }
