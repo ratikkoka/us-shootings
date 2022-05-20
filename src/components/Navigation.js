@@ -25,9 +25,9 @@ const Navigation = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav activeKey={location.pathname}>
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/statistics">Statistics</Nav.Link>
-            <Nav.Link href="/about">About Us</Nav.Link>
+            <Nav.Link href="/us-shootings">Home</Nav.Link>
+            <Nav.Link href="/us-shootings/statistics">Statistics</Nav.Link>
+            <Nav.Link href="/us-shootings/about">About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

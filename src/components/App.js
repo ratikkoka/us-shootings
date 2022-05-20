@@ -16,16 +16,16 @@ export default function App() {
 
       <main>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/us-shootings">
             <Home />
           </Route>
-          <Route exact path="/statistics">
+          <Route exact path="/us-shootings/statistics">
             <Stats />
           </Route>
-          <Route exact path="/about">
+          <Route exact path="/us-shootings/about">
             <About />
           </Route>
-          <Redirect to="/" />
+          <Redirect to="/us-shootings" />
         </Switch>
       </main>
     </div>
