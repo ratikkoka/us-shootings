@@ -97,8 +97,6 @@ export default function DeckMap({
       });
   }, []);
 
-  console.log(data);
-
   const layers = [
     new HexagonLayer({
       id: "heatmap",
