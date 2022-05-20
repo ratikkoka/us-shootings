@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 
-export function Navigation(props) {
+const Navigation = (props) => {
   const { location } = props;
   return (
     <Navbar
@@ -17,7 +17,7 @@ export function Navigation(props) {
       <Container id="cont">
         <Navbar.Brand>
           <img
-            src={process.env.PUBLIC_URL + '/img/logo.svg'}
+            src={process.env.PUBLIC_URL + "/img/logo.svg"}
             className="d-inline-block align-top"
             alt="US Shooting logo"
           />
@@ -33,6 +33,6 @@ export function Navigation(props) {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default withRouter(Navigation);

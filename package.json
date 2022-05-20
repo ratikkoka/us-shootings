@@ -1,7 +1,7 @@
 {
   "name": "us-shootings",
   "version": "0.1.0",
-  "homepage": "https://ratikkoka.github.io/us-shootings",
+  "homepage": "https://ratikkoka.github.io/us-shootings/",
   "private": true,
   "scripts": {
     "predeploy": "npm run build",

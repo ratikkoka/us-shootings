@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {render} from 'react-dom';
+import { render } from "react-dom";
 import { Map } from "react-map-gl";
 import DeckGL from "@deck.gl/react";
 import { AmbientLight, PointLight, LightingEffect } from "@deck.gl/core";
@@ -79,12 +79,12 @@ export default function DeckMap({
   upperPercentile = 100,
   coverage = 1,
 }) {
-  const [data, setHeat] = useState(null);
+  const [data, setHeat] = useState([]);
 
   const { readString } = usePapaParse();
 
   useEffect(() => {
-    fetch("../data/heatmap-data.csv")
+    fetch(process.env.PUBLIC_URL + "/data/heatmap-data.csv")
       .then((response) => response.text())
       .then((responseText) => {
         readString(responseText, {
@@ -96,6 +96,8 @@ export default function DeckMap({
         });
       });
   }, []);
+
+  console.log(data);
 
   const layers = [
     new HexagonLayer({
@@ -126,7 +128,7 @@ export default function DeckMap({
       controller={true}
       getTooltip={getTooltip}
     >
-      <Map reuseMaps mapStyle={MAP_STYLE} preventStyleDiffing={true} />
+      <Map reuseMaps mapStyle={mapStyle} preventStyleDiffing={true} />
     </DeckGL>
   );
 }
