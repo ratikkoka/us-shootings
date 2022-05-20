@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+#nav {
+  background-color: #cd2026 !important;
+}
+
+#cont {
+  margin-left: 0;
+  max-width: 100% !important;
+}
+
+#deckgl-wrapper {
+  margin-top: 60px;
+}
