@@ -1,5 +1,11 @@
 {
+  "name": "us-shootings",
+  "version": "0.1.0",
+  "homepage": "https://ratikkoka.github.io/us-shootings",
+  "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -28,6 +34,7 @@
     "@babel/preset-env": "^7.18.0",
     "@babel/preset-react": "^7.17.12",
     "babel-loader": "^8.2.5",
+    "gh-pages": "^4.0.0",
     "prettier": "2.6.2",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",

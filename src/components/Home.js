@@ -3,7 +3,7 @@ import DeckMap from "./DeckMap";
 
 export default function Home() {
   return (
-    <div className="overview">
+    <div>
       <DeckMap />
     </div>
   );
