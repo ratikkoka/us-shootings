@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
 
 export function Navigation(props) {
   const { location } = props;
@@ -33,3 +34,5 @@ export function Navigation(props) {
     </Navbar>
   );
 }
+
+export default withRouter(Navigation);
