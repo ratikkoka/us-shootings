@@ -4,6 +4,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "./Home";
 import Stats from "./Stats";
 import About from "./About";
+import {Navigation} from "./Navigation";
 import "../index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 

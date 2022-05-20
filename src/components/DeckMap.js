@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {render} from 'react-dom';
 import { Map } from "react-map-gl";
 import DeckGL from "@deck.gl/react";
 import { AmbientLight, PointLight, LightingEffect } from "@deck.gl/core";

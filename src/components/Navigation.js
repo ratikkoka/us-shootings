@@ -16,7 +16,7 @@ export function Navigation(props) {
       <Container id="cont">
         <Navbar.Brand>
           <img
-            src="../img/logo.svg"
+            src={process.env.PUBLIC_URL + '/img/logo.svg'}
             className="d-inline-block align-top"
             alt="US Shooting logo"
           />
