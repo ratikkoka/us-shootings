@@ -39,7 +39,7 @@ function Team() {
       <div className="team-member">
         <img className="member-photo" src="img/peter.jpg" alt="Peter Zhou" />
         <h3 className="member-name">Peter Zhou</h3>
-        <h4 className="member-status">Junio</h4>
+        <h4 className="member-status">Junior</h4>
       </div>
     </div>
   );
