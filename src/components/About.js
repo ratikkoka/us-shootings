@@ -13,33 +13,29 @@ function Team() {
   return (
     <div className="team-section">
       <div className="team-member">
-        <img className="member-photo" src="" alt="" />
-        <h3 className="member-name">Peter Kidane</h3>
-        <h4 className="member-status">Senior</h4>
-      </div>
-      <div className="team-member">
         <img className="member-photo" src="img/ratik.png" alt="Ratik Koka" />
         <h3 className="member-name">Ratik Koka</h3>
         <h4 className="member-status">Senior</h4>
       </div>
       <div className="team-member">
-        <img className="member-photo" src="" alt="" />
-        <h3 className="member-name">Travis Le</h3>
-        <h4 className="member-status">Senior</h4>
-      </div>
-      <div className="team-member">
-        <img
-          className="member-photo"
-          src="img/jun.jpg"
-          alt="Jun Nguyen"
-        />
+        <img className="member-photo" src="img/jun.jpg" alt="Jun Nguyen" />
         <h3 className="member-name">Jun Nguyen</h3>
         <h4 className="member-status">Senior</h4>
       </div>
       <div className="team-member">
-        <img className="member-photo" src="img/peter.jpg" alt="Peter Zhou" />
+        <img className="member-photo" src="img/peter.png" alt="Peter Zhou" />
         <h3 className="member-name">Peter Zhou</h3>
         <h4 className="member-status">Junior</h4>
+      </div>
+      <div className="team-member">
+        <img className="member-photo" src="img/blank.png" alt="Peter Kidane" />
+        <h3 className="member-name">Peter Kidane</h3>
+        <h4 className="member-status">Senior</h4>
+      </div>
+      <div className="team-member">
+        <img className="member-photo" src="img/blank.png" alt="Travis Le" />
+        <h3 className="member-name">Travis Le</h3>
+        <h4 className="member-status">Senior</h4>
       </div>
     </div>
   );

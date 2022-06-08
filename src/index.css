@@ -8,6 +8,8 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif !important;
+  background-color: #2f3136 !important;
+  color: #fff !important; 
 }
 
 #nav {
@@ -92,7 +94,7 @@ body {
   position: absolute;
   top: 100px;
   right: 73px;
-  width: 274px;
+  width: 300px;
   height: 250px;
   background-color: #2f3136;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -148,4 +150,123 @@ body {
 .slider .MuiSlider-thumb.Mui-active,
 .slider .MuiSlider-thumb:hover {
   box-shadow: 0px 0px 0px 10px rgba(255, 0, 0, 0.2);
+}
+
+h1 {
+  padding-top: 1rem;
+  font-weight: 700;
+  font-size: 41px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+h2 span {
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.data-head {
+  color: white;
+}
+
+.data-cd {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.data-cd div {
+  margin-right: 20px;
+}
+
+.data-cd h3 {
+  font-size: 17px;
+  color: white;
+  margin: 0;
+}
+
+.data-cd p {
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.widget {
+  background-color: #3f3c41;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  padding: 8px;
+}
+
+.widget h2 {
+  padding: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.dashboard {
+  margin: 0 14px;
+  margin-top: 100px;
+}
+
+
+@media (min-width: 992px) {
+  h1 {
+      padding: 0;
+      font-size: 3.5rem;
+      margin-top: 40px;
+  }
+
+  h2 {
+      font-size: 28px;
+  }
+
+  .dashboard-container {
+      width: calc(100% - 16px);
+      margin: 0;
+      margin-left: 40px;
+      padding: 0;
+      display: flex;
+      height: 100%;
+  }
+
+  .dashboard-container section {
+      margin: 0;
+      height: 100%;
+  }
+
+  .dashboard-container section:first-child {
+      width: 25%;
+  }
+
+  .data-cd {
+      min-width: 60%;
+      max-width: 75%;
+      justify-content: space-between;
+  }
+
+  .dashboard-container section:first-child + section {
+      overflow: none;
+      display: flex;
+      height: 363px;
+      width: 75%;
+  }
+
+  .rate {
+      max-width: 50%;
+  }
+
+  .widgets-container {
+      width: calc(100% - 16px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+  }
+
+  .widget {
+      width: 600px;
+  }
 }
