@@ -3,8 +3,12 @@ import { render } from "react-dom";
 import { Map } from "react-map-gl";
 import DeckGL from "@deck.gl/react";
 import { AmbientLight, PointLight, LightingEffect } from "@deck.gl/core";
-import { HexagonLayer, GridLayer, HeatmapLayer } from "@deck.gl/aggregation-layers";
-import {GridCellLayer} from '@deck.gl/layers';
+import {
+  HexagonLayer,
+  GridLayer,
+  HeatmapLayer,
+} from "@deck.gl/aggregation-layers";
+import { GridCellLayer } from "@deck.gl/layers";
 import { usePapaParse } from "react-papaparse";
 
 const ambientLight = new AmbientLight({
@@ -59,45 +63,49 @@ export const colorRange = [
   [179, 0, 0],
 ];
 
-function getTooltip({ object }) {
-  if (!object) {
-    return null;
-  }
-  const lat = object.position[1];
-  const lng = object.position[0];
-  const count = object.points.length;
-
-  return `\
-    latitude: ${Number.isFinite(lat) ? lat.toFixed(6) : ""}
-    longitude: ${Number.isFinite(lng) ? lng.toFixed(6) : ""}
-    ${count} Accidents`;
-}
-
 /* eslint-disable react/no-deprecated */
 export default function DeckMap({
   mapStyle = MAP_STYLE,
   radius = 1000,
   upperPercentile = 1000,
   coverage = 10,
+  date,
+  selected,
 }) {
   const [data, setHeat] = useState([]);
 
   const { readString } = usePapaParse();
 
+  let datasets = [
+    "/data/total-deaths-geoencoded.csv",
+    "/data/total-injuries-geoencoded.csv",
+    "/data/mass-shootings-geoencoded.csv",
+  ];
+
   useEffect(() => {
-    fetch(process.env.PUBLIC_URL + "/data/total_2022_geocoded.csv")
+    let url = "";
+    if (selected == "deaths") {
+      url = datasets[0];
+    } else if (selected == "injury") {
+      url = datasets[1];
+    } else if (selected == "mass") {
+      url = datasets[2];
+    }
+    fetch(process.env.PUBLIC_URL + url)
       .then((response) => response.text())
       .then((responseText) => {
         readString(responseText, {
           worker: true,
           header: true,
           complete: (results) => {
-            setHeat(results.data);
-            //.map((d) => [Number(d.Longitude), Number(d.Latitude)])
+            let filteredData = results.data.filter((test) => {
+              return new Date(test["Incident Date"]) <= new Date(date);
+            });
+            setHeat(filteredData);
           },
         });
       });
-  }, []);
+  }, [date, selected]);
 
   const layers = [
     new HexagonLayer({
@@ -110,9 +118,33 @@ export default function DeckMap({
       coverage,
       elevationRange: [1000, 5000],
       elevationScale: 100,
-      getPosition: d => [Number(d.Longitude), Number(d.Latitude)],
+      getPosition: (d) => [Number(d.Longitude), Number(d.Latitude)],
     }),
   ];
+
+  function getTooltip({ object }) {
+    if (!object) {
+      return null;
+    }
+    const lat = object.position[1];
+    const lng = object.position[0];
+    const count = object.points.length;
+    let deaths = 0;
+    let injuries = 0;
+    object.points.map(
+      (point) => (deaths += parseInt(point.source["# Killed"]))
+    );
+    object.points.map(
+      (point) => (injuries += parseInt(point.source["# Injured"]))
+    );
+
+    return `\
+      Latitude: ${Number.isFinite(lat) ? lat.toFixed(6) : ""}
+      Longitude: ${Number.isFinite(lng) ? lng.toFixed(6) : ""}
+      Incidents: ${count}
+      Deaths: ${deaths}
+      Injuries: ${injuries}`;
+  }
 
   return (
     <DeckGL
@@ -120,6 +152,7 @@ export default function DeckMap({
       effects={[lightingEffect]}
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
+      getTooltip={getTooltip}
     >
       <Map reuseMaps mapStyle={mapStyle} preventStyleDiffing={true} />
     </DeckGL>
