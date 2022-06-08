@@ -18,7 +18,7 @@ export default function Home() {
     } else if (selected == "injury") {
       setMin(new Date("5/13/2022").getTime());
     }
-  }, [selected])
+  }, [selected]);
 
   function handleChange(event, newValue) {
     setDate(new Date(newValue).toLocaleDateString());
@@ -75,6 +75,7 @@ export default function Home() {
           </StyledEngineProvider>
         </div>
         <div className="panel-source">
+          <div>Press Shift to Rotate Map</div>
           <div>
             Source:{" "}
             <a href="https://www.gunviolencearchive.org/">

@@ -36,7 +36,7 @@ const material = {
 };
 
 const INITIAL_VIEW_STATE = {
-  longitude: -95.7129,
+  longitude: -85.7129,
   latitude: 37.0902,
   zoom: 3.75,
   minZoom: 3,
@@ -115,8 +115,8 @@ export default function DeckMap({
       getPosition: (d) => [Number(d.Longitude), Number(d.Latitude)],
       material,
       transitions: {
-        elevationScale: 2000
-      }
+        elevationScale: 2000,
+      },
     }),
   ];
 
