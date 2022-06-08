@@ -36,6 +36,9 @@ export default function CasesGraph({ data, type, title }) {
     for (var prop in holder) {
       parsedData.push({ x: prop, y: holder[prop] });
     }
+
+    parsedData = parsedData.sort((a, b) => a.y - b.y);
+
     scale = { text: "state" };
   }
 
