@@ -9,7 +9,7 @@ html {
 body {
   font-family: "Montserrat", sans-serif !important;
   background-color: #2f3136 !important;
-  color: #fff !important; 
+  color: #fff !important;
 }
 
 #nav {
@@ -114,12 +114,14 @@ body {
   margin-bottom: 25px;
 }
 
-.panel-container a, .sources a {
+.panel-container a,
+.sources a {
   color: #cd2026;
   text-decoration: none;
 }
 
-.panel-container a:hover, .sources a:hover {
+.panel-container a:hover,
+.sources a:hover {
   color: #cd2026;
   text-decoration: none;
 }
@@ -212,61 +214,60 @@ h2 span {
   margin-top: 100px;
 }
 
-
 @media (min-width: 992px) {
   h1 {
-      padding: 0;
-      font-size: 3.5rem;
-      margin-top: 40px;
+    padding: 0;
+    font-size: 3.5rem;
+    margin-top: 40px;
   }
 
   h2 {
-      font-size: 28px;
+    font-size: 28px;
   }
 
   .dashboard-container {
-      width: calc(100% - 16px);
-      margin: 0;
-      margin-left: 40px;
-      padding: 0;
-      display: flex;
-      height: 100%;
+    width: calc(100% - 16px);
+    margin: 0;
+    margin-left: 40px;
+    padding: 0;
+    display: flex;
+    height: 100%;
   }
 
   .dashboard-container section {
-      margin: 0;
-      height: 100%;
+    margin: 0;
+    height: 100%;
   }
 
   .dashboard-container section:first-child {
-      width: 25%;
+    width: 25%;
   }
 
   .data-cd {
-      min-width: 60%;
-      max-width: 75%;
-      justify-content: space-between;
+    min-width: 60%;
+    max-width: 75%;
+    justify-content: space-between;
   }
 
   .dashboard-container section:first-child + section {
-      overflow: none;
-      display: flex;
-      height: 363px;
-      width: 75%;
+    overflow: none;
+    display: flex;
+    height: 363px;
+    width: 75%;
   }
 
   .rate {
-      max-width: 50%;
+    max-width: 50%;
   }
 
   .widgets-container {
-      width: calc(100% - 16px);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
+    width: calc(100% - 16px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 
   .widget {
-      width: 600px;
+    width: 600px;
   }
 }
