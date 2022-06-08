@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 #nav {
@@ -112,12 +112,12 @@ body {
   margin-bottom: 25px;
 }
 
-.panel-container a {
+.panel-container a, .sources a {
   color: #cd2026;
   text-decoration: none;
 }
 
-.panel-container a:hover {
+.panel-container a:hover, .sources a:hover {
   color: #cd2026;
   text-decoration: none;
 }

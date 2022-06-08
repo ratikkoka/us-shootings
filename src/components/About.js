@@ -18,7 +18,7 @@ function Team() {
         <h4 className="member-status">Senior</h4>
       </div>
       <div className="team-member">
-        <img className="member-photo" src="" alt="" />
+        <img className="member-photo" src="img/ratik.png" alt="Ratik Koka" />
         <h3 className="member-name">Ratik Koka</h3>
         <h4 className="member-status">Senior</h4>
       </div>
@@ -30,8 +30,8 @@ function Team() {
       <div className="team-member">
         <img
           className="member-photo"
-          src="img/jun_pic.jpg"
-          alt="Jun Nguyen photo"
+          src="img/jun.jpg"
+          alt="Jun Nguyen"
         />
         <h3 className="member-name">Jun Nguyen</h3>
         <h4 className="member-status">Senior</h4>
@@ -49,7 +49,7 @@ function AboutContent() {
   return (
     <div className="about-content">
       <div className="about-explanation">
-        <ol>
+        <ul>
           <li>
             Our idea came from the recent and current news, which is heavily
             focused on gun violence.
@@ -63,7 +63,7 @@ function AboutContent() {
             We will be looking at data from mass shootings and the number of
             deaths/injured.
           </li>
-        </ol>
+        </ul>
       </div>
 
       <div className="acknowledgements">
