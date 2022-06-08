@@ -17,6 +17,8 @@ export default function Home() {
       setMin(new Date("1/1/2022").getTime());
     } else if (selected == "injury") {
       setMin(new Date("5/13/2022").getTime());
+    } else {
+      setMin(new Date("4/25/2022").getTime());
     }
   }, [selected]);
 
