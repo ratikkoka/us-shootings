@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DeckMap from "./DeckMap";
 import { useState } from "react";
 import Slider from "@mui/material/Slider";
@@ -6,17 +6,25 @@ import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 import { Form } from "react-bootstrap";
 
 export default function Home() {
-  let [date, setDate] = useState("5/20/2022");
+  let [date, setDate] = useState("6/6/2022");
   let [selected, setSelected] = useState("deaths");
 
-  let min = new Date("4/8/2022").getTime();
-  let max = new Date().getTime() - 86400000;
+  let [min, setMin] = useState(new Date("4/25/2022").getTime());
+  let max = new Date("6/6/2022").getTime() - 86400000;
+
+  useEffect(() => {
+    if (selected == "mass") {
+      setMin(new Date("1/1/2022").getTime());
+    } else if (selected == "injury") {
+      setMin(new Date("5/13/2022").getTime());
+    }
+  }, [selected])
 
   function handleChange(event, newValue) {
     setDate(new Date(newValue).toLocaleDateString());
   }
 
-  function handleChange(event) {
+  function handleSelectChange(event) {
     setSelected(event.target.id);
   }
 
@@ -25,7 +33,7 @@ export default function Home() {
       <DeckMap date={date} selected={selected} />
       <div className="panel-container">
         <div className="panel-content">
-          <Form className="radio-buttons" onChange={handleChange}>
+          <Form className="radio-buttons" onChange={handleSelectChange}>
             <Form.Check
               defaultChecked={true}
               type="radio"

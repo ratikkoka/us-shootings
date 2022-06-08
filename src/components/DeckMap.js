@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { render } from "react-dom";
 import { Map } from "react-map-gl";
 import DeckGL from "@deck.gl/react";
 import { AmbientLight, PointLight, LightingEffect } from "@deck.gl/core";
-import {
-  HexagonLayer,
-  GridLayer,
-  HeatmapLayer,
-} from "@deck.gl/aggregation-layers";
-import { GridCellLayer } from "@deck.gl/layers";
+import { HexagonLayer } from "@deck.gl/aggregation-layers";
 import { usePapaParse } from "react-papaparse";
 
 const ambientLight = new AmbientLight({
@@ -117,8 +111,12 @@ export default function DeckMap({
       upperPercentile,
       coverage,
       elevationRange: [1000, 5000],
-      elevationScale: 100,
+      elevationScale: data && data.length ? 100 : 0,
       getPosition: (d) => [Number(d.Longitude), Number(d.Latitude)],
+      material,
+      transitions: {
+        elevationScale: 2000
+      }
     }),
   ];
 
