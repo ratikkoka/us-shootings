@@ -37,7 +37,7 @@ function Team() {
         <h4 className="member-status">Senior</h4>
       </div>
       <div className="team-member">
-        <img className="member-photo" src="" alt="" />
+        <img className="member-photo" src="img/peter.jpg" alt="Peter Zhou" />
         <h3 className="member-name">Peter Zhou</h3>
         <h4 className="member-status">Junior</h4>
       </div>
